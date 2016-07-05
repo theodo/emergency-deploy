@@ -1,15 +1,6 @@
 const gpio = require('gpio');
 const spawn = require('child_process').spawn;
 
-exec('cat *.js bad_file | wc -l', (error, stdout, stderr) => {
-  if (error) {
-    console.error(`exec error: ${error}`);
-    return;
-  }
-  console.log(`stdout: ${stdout}`);
-  console.log(`stderr: ${stderr}`);
-});
-
 const gpio22 = gpio.export(22, {
   direction: 'in',
   ready() {
