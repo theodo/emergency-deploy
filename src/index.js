@@ -9,7 +9,6 @@ const gpio22 = gpio.export(2, {
 });
 
 gpio22.on('change', val => {
-  console.log(val);
-  // const deploy = spawn('make', ['staging-fast-deploy']);
-  // deploy.stdout.pipe(process.stdout);
+  const deploy = spawn('make', ['-f', '/home/pi/fastIT/www/dashboard-sirf/current/Makefile', 'staging-fast-deploy']);
+  deploy.stdout.pipe(process.stdout);
 });
